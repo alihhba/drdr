@@ -2,3 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .main-w {
+    @apply lg:max-w-6xl lg:mx-auto px-4;
+  }
+}
+
+body {
+  direction: rtl;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: 0 !important;
+  width: 50px !important;
+  /* width: calc(var(--swiper-navigation-size)/ 44 * 27);
+  height: var(--swiper-navigation-size); */
+  /* margin-top: calc(0px - (var(--swiper-navigation-size)/ 2)); */
+  height: 105% !important;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black !important;
+  /* font-size: 1px !important; */
+  font-weight: 100 !important;
+  padding: 10px !important;
+}
+.swiper-button-next {
+  position: absolute;
+  left: 0 !important;
+  background: linear-gradient(to right, #f4faff, #f4faff);
+}
+.swiper-button-prev {
+  position: absolute;
+  right: 0 !important;
+  background: linear-gradient(to left, #f4faff, #f4faff);
+}
+.swiper-button-next::after {
+  font-size: 20px !important;
+}
+.swiper-button-prev::after {
+  font-size: 20px !important;
+}
+
+.swiper-button-disabled::after {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    display: none;
+    background: transparent !important;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    background: transparent !important;
+  }
+}
+
+.swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+@media (max-width: 1024px) {
+  .swiper-pagination {
+    display: none;
+  }
+}
