@@ -8,6 +8,10 @@
   }
 }
 
+.blur{
+  filter: blur(100px);
+}
+
 body {
   direction: rtl;
   scroll-behavior: smooth;

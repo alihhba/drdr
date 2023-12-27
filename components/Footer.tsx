@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import React from "react";
+import Logo from "./Logo";
 
 const Footer = () => {
   return (
@@ -8,10 +9,7 @@ const Footer = () => {
       {/* 1 */}
       <div className="flex flex-col gap-8 max-w-[344px]">
         {/* img */}
-        <div className="flex items-center gap-2">
-          <img src="/images/drdr-heart.svg" alt="logo" />
-          <img src="/images/drdr-logo-white.svg" alt="logo" />
-        </div>
+        <Logo />
 
         <div className="flex flex-col gap-2 ">
           <p>پاسخگویی ۷ روز هفته از ساعت ۹ صبح تا ۱ بامداد</p>
@@ -44,7 +42,8 @@ const Footer = () => {
             />
             <div className="flex flex-col  items-start gap-2">
               <p>
-              تهران، میدان آرژانتین، خیابان بیهقی، خیابان شانزدهم شرقی، پلاک ۲۸
+                تهران، میدان آرژانتین، خیابان بیهقی، خیابان شانزدهم شرقی، پلاک
+                ۲۸
               </p>
               <p>کدپستی: ۱۵۱۵۶۷۴۴۱۱</p>
             </div>

@@ -569,7 +569,7 @@ export default function Home() {
       {/* section */}
       <div className="main-w mb-14">
         <div className=" border border-[#CCE6FF] rounded-lg ">
-          <div className="py-4 border-b  border-[#CCE6FF] px-4">
+          <div className="border-b  border-[#CCE6FF]">
             <LinkShower title="لیست پزشکان بر اساس مرکز استان‌">
               {cityes.map((city) => (
                 <div
@@ -582,14 +582,14 @@ export default function Home() {
               ))}
             </LinkShower>
           </div>
-          <div className=" py-4 px-4">
+          <div className="">
             <LinkShower title="لیست پزشکان بر اساس تخصص">
               {expertise.map((city) => (
                 <div
                   key={city.id}
                   className="text-[#0067CD] flex  items-center gap-2 cursor-pointer"
                 >
-                  <div className="w-1.5 h-1.5 bg-[#0067CD] rounded-full"></div>
+                  <div className="w-1.5 h-1.5 bg-[#0067CD] rounded-full" ></div>
                   <p className="text-[14px]">دکتر {city.name}</p>
                 </div>
               ))}

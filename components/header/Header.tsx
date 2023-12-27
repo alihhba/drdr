@@ -1,7 +1,12 @@
+"use client";
 import LoginBtn from "@/components/LoginBtn";
-import { Menu } from "lucide-react";
+import { expertise } from "@/constant/constant";
+import { ChevronDown, Menu, ShoppingBag } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import Logo from "../Logo";
+import MobileMenu from "../MobileMenu";
 
 const items = [
   { title: "نوبت دهی", path: "/search/expertise" },
@@ -13,27 +18,104 @@ const items = [
 ];
 
 const Header = () => {
+  const [megaMenu, setMegaMenu] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
+
+  useEffect(() => {
+    mobileMenu
+      ? document.body.classList.add("overflow-hidden")
+      : document.body.classList.remove("overflow-hidden");
+  }, [mobileMenu]);
+
   return (
-    <div className= " z-50  flex flex-col w-full h-fit main-w py-3 gap-3">
+    <div className="z-50  flex flex-col w-full h-fit main-w py-3 gap-3">
+      {/* mega menu */}
+      {megaMenu && (
+        <div
+          onMouseOver={() => setMegaMenu(true)}
+          onMouseOut={() => setMegaMenu(false)}
+          className=" absolute top-[93px] left-0 w-screen h-[464px] bg-[#FFFFFF] shadow-lg pt-[14px]"
+        >
+          <div className="flex h-full w-full border border-[#DAEDFF] py-10">
+            <div className="h-full w-2/12 border-l border-[#0067CD] flex justify-end px-4 ">
+              <button className="text-[#0067CD] h-[40px] w-[149px] border border-[#0067CD] rounded-lg">
+                لیست تخصص‌ها
+              </button>
+            </div>
+
+            <div className="grid grid-cols-4 w-full px-4 pr-12">
+              {expertise.map((item) => (
+                <Link
+                  key={item.id}
+                  href={"/"}
+                  className="text-[17px] w-fit h-fit text-[#0067CD]"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="flex justify-between items-center flex-row">
         {/* menu mobile */}
-        <Menu className="w-7 h-7 lg:hidden cursor-pointer" />
-        {/* logo */}
-        <div className="flex gap-1">
-          <Image src={`/images/symbol.svg`} height={30} width={30} alt="logo" />
-          <Image src={`/images/drdr.svg`} height={100} width={100} alt="logo" />
+        <Menu
+          onClick={() => setMobileMenu(true)}
+          className="w-7 h-7 lg:hidden cursor-pointer"
+        />
+
+        {/* overlay */}
+        {mobileMenu && (
+          <div
+            onClick={() => setMobileMenu(false)}
+            className="absolute inset-0 w-screen h-screen backdrop-filter backdrop-blur-sm transition-all duration-500"
+          ></div>
+        )}
+
+        <div
+          className={`absolute w-[300px] backdrop-filter backdrop-blur-none shadow-lg h-screen bg-white transition-all duration-500 ${
+            mobileMenu
+              ? "top-0 right-0 bottom-0"
+              : "-right-[100vw] top-0 bottom-0"
+          }`}
+        >
+          <MobileMenu setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} />
         </div>
+
+        {/* logo */}
+        <Logo blue />
         {/* login btn */}
         <LoginBtn />
       </div>
 
       <div className="hidden lg:flex   justify-between items-center flex-row">
         <div className="flex flex-row-reverse gap-3">
-          {items.map((item) => (
-            <Link href={item.path} key={item.title} className="flex ">
-              <p className="text-sm">{item.title}</p>
-            </Link>
-          )).reverse()}
+          {items
+            .map((item) => (
+              <Link
+                onMouseOver={() =>
+                  item.title === "تخصص ها" && setMegaMenu(true)
+                }
+                onMouseOut={() =>
+                  item.title === "تخصص ها" && setMegaMenu(false)
+                }
+                href={item.path}
+                key={item.title}
+                className="flex items-center gap-1"
+              >
+                <p className="text-sm ">{item.title}</p>
+
+                {item.title === "تخصص ها" && (
+                  <ChevronDown
+                    className={`h-4 w-4 ${
+                      megaMenu && "rotate-180 transition-all"
+                    } transition-all`}
+                  />
+                )}
+              </Link>
+            ))
+            .reverse()}
         </div>
 
         <div>
