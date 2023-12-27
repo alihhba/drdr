@@ -13,9 +13,10 @@ import ExpertiseSlider from "@/components/slider/ExpertiseSlider";
 import MedicalCenterSlider from "@/components/slider/medicalCenterSlider";
 import { cityes, expertise } from "@/constant/constant";
 import { ArrowLeft, UserCheck } from "lucide-react";
+import Link from "next/link";
 import "swiper/css";
 
-const drInfo = [
+export const drInfo = [
   {
     evisit: true,
     espanser: true,
@@ -582,26 +583,28 @@ export default function Home() {
           <div className="border-b  border-[#CCE6FF]">
             <LinkShower title="لیست پزشکان بر اساس مرکز استان‌">
               {cityes.map((city) => (
-                <div
+                <Link
+                  href={`/search/city-${city.id}/expertise`}
                   key={city.id}
                   className="text-[#0067CD] flex  items-center gap-2 cursor-pointer"
                 >
                   <div className="w-1.5 h-1.5 bg-[#0067CD] rounded-full"></div>
                   <p className="text-[14px]">دکترهای {city.name}</p>
-                </div>
+                </Link>
               ))}
             </LinkShower>
           </div>
           <div className="">
             <LinkShower title="لیست پزشکان بر اساس تخصص">
-              {expertise.map((city) => (
-                <div
-                  key={city.id}
+              {expertise.map((item) => (
+                <Link
+                  href={`/search/expertise/${item.id}`}
+                  key={item.id}
                   className="text-[#0067CD] flex  items-center gap-2 cursor-pointer"
                 >
                   <div className="w-1.5 h-1.5 bg-[#0067CD] rounded-full"></div>
-                  <p className="text-[14px]">دکتر {city.name}</p>
-                </div>
+                  <p className="text-[14px]">دکتر {item.name}</p>
+                </Link>
               ))}
             </LinkShower>
           </div>

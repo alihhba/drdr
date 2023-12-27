@@ -1,12 +1,13 @@
 "use client";
 import LoginBtn from "@/components/LoginBtn";
 import { expertise } from "@/constant/constant";
-import { ChevronDown, Menu, ShoppingBag } from "lucide-react";
-import Image from "next/image";
+import { ChevronDown, Menu } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Logo from "../Logo";
 import MobileMenu from "../MobileMenu";
+import SearchBox from "../SearchBox";
+import { usePathname } from "next/navigation";
 
 const items = [
   { title: "نوبت دهی", path: "/search/expertise" },
@@ -20,6 +21,7 @@ const items = [
 const Header = () => {
   const [megaMenu, setMegaMenu] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     mobileMenu
@@ -34,7 +36,9 @@ const Header = () => {
         <div
           onMouseOver={() => setMegaMenu(true)}
           onMouseOut={() => setMegaMenu(false)}
-          className=" absolute top-[93px] left-0 w-screen h-[464px] bg-[#FFFFFF] shadow-lg pt-[14px]"
+          className={`absolute ${
+            pathname.length > 3 ? "top-[99px]" : "top-[93px]"
+          }  left-0 w-screen h-[464px] bg-[#FFFFFF] shadow-lg pt-[14px]`}
         >
           <div className="flex h-full w-full border border-[#DAEDFF] py-10">
             <div className="h-full w-2/12 border-l border-[#0067CD] flex justify-end px-4 ">
@@ -85,11 +89,24 @@ const Header = () => {
 
         {/* logo */}
         <Logo blue />
+
+        {/* search box */}
+        {pathname.length > 3 && (
+          <div className="max-lg:hidden">
+            <SearchBox />
+          </div>
+        )}
         {/* login btn */}
         <LoginBtn />
       </div>
 
-      <div className="hidden lg:flex   justify-between items-center flex-row">
+      {pathname.length > 3 && (
+        <div className="lg:hidden">
+          <SearchBox />
+        </div>
+      )}
+
+      <div className="hidden lg:flex justify-between items-center flex-row">
         <div className="flex flex-row-reverse gap-3">
           {items
             .map((item) => (
