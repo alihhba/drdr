@@ -29,7 +29,7 @@ const ExpertiseSlider = () => {
       >
         {expertise.map((item) => (
           <SwiperSlide key={item.id} className="w-fit min-w-fit">
-            <ExpertiseCard title={item.name} />
+            <ExpertiseCard title={item.name} img={item.img} id={item.id} />
           </SwiperSlide>
         ))}
       </Swiper>

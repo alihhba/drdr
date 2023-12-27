@@ -381,12 +381,22 @@ export default function Home() {
           <div className="lg:hidden flex flex-col w-full overflow-x-scroll gap-3">
             <div className="flex gap-3">
               {expertise.slice(0, 23).map((item) => (
-                <ExpertiseCard key={item.id} title={item.name} />
+                <ExpertiseCard
+                  key={item.id}
+                  title={item.name}
+                  img={item.img}
+                  id={item.id}
+                />
               ))}
             </div>
             <div className="flex gap-3">
               {expertise.slice(23, 46).map((item) => (
-                <ExpertiseCard key={item.id} title={item.name} />
+                <ExpertiseCard
+                  key={item.id}
+                  title={item.name}
+                  img={item.img}
+                  id={item.id}
+                />
               ))}
             </div>
           </div>
@@ -589,7 +599,7 @@ export default function Home() {
                   key={city.id}
                   className="text-[#0067CD] flex  items-center gap-2 cursor-pointer"
                 >
-                  <div className="w-1.5 h-1.5 bg-[#0067CD] rounded-full" ></div>
+                  <div className="w-1.5 h-1.5 bg-[#0067CD] rounded-full"></div>
                   <p className="text-[14px]">دکتر {city.name}</p>
                 </div>
               ))}
