@@ -19,6 +19,7 @@ const page = ({ params }: { params: any }) => {
             title={item.name}
             key={item.id}
             nextTitle={`در ${city[0].name}`}
+            id={item.id}
           />
         ))}
       </div>

@@ -12,7 +12,7 @@ const page = () => {
 
       <div className="py-1">
         {expertise.map((item) => (
-          <ExpertiseInfoCard title={item.name} key={item.id} />
+          <ExpertiseInfoCard title={item.name} key={item.id} id={item.id} />
         ))}
       </div>
 

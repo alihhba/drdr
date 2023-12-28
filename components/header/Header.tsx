@@ -50,8 +50,9 @@ const Header = () => {
             <div className="grid grid-cols-4 w-full px-4 pr-12">
               {expertise.map((item) => (
                 <Link
+                  onClick={() => setMegaMenu(false)}
                   key={item.id}
-                  href={"/"}
+                  href={`/search/expertise/${item.id}`}
                   className="text-[17px] w-fit h-fit text-[#0067CD]"
                 >
                   {item.name}

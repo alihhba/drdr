@@ -1,17 +1,21 @@
 import { drInfo } from "@/app/page";
 import ExpertiseDrCard from "@/components/card/ExpertiseDrCard";
 import { expertise } from "@/constant/constant";
+import { User } from "lucide-react";
 
 const page = ({ params }: { params: any }) => {
   const expe = expertise.filter((i) => i.id === params.expertise);
 
   return (
     <div className="flex flex-col lg:main-w w-full  py-7 lg:py-5">
-      <p className="text-sm font-extrabold max-lg:pr-4 max-lg:pb-3">
-        {`دریافت نوبت بهترین دکتر متخصص ${expe[0].name}`}
-      </p>
+      <div className="flex items-center gap-1">
+        <User className="w-6 h-6 mb-1 text-[#202020]" />
+        <p className="text-sm font-extrabold">
+          {`دریافت نوبت بهترین دکتر متخصص ${expe[0].name}`}
+        </p>
+      </div>
 
-      <div className="py-1 space-y-1 lg:space-y-3">
+      <div className="py-1 space-y-1 lg:space-y-3 mt-6">
         {drInfo.map((dr, i) => (
           <ExpertiseDrCard
             title={dr.title}

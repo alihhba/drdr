@@ -6,15 +6,19 @@ interface props {
   title: string;
   prevTitle?: string;
   nextTitle?: string;
+  id: string;
 }
 
-const ExpertiseInfoCard = ({ title, nextTitle, prevTitle }: props) => {
+const ExpertiseInfoCard = ({ title, nextTitle, prevTitle, id }: props) => {
   return (
     <div className="flex flex-col lg:flex-row lg:gap-5 border-b-2 py-5 border-[#DFDFDF]">
       <div className="flex flex-col gap-2 lg:w-8/12">
-        <p className="text-base font-extrabold ">
+        <Link
+          href={`/search/expertise/${id}`}
+          className="text-base font-extrabold "
+        >
           {prevTitle} {title} {nextTitle}
-        </p>
+        </Link>
         <p className="line-clamp-2">
           برای بیماری‌های زنان مانند تنبلی تخمدان، مشکلات قاعدگی، یائسگی و... به
           پزشک زنان مراجعه می‌شود. متخصصان زنان و زایمان روش‌های تشخیصی و درمانی
@@ -55,11 +59,13 @@ const ExpertiseInfoCard = ({ title, nextTitle, prevTitle }: props) => {
           </div>
         </div>
         {/* button */}
-        <button className="max-lg:hidden w-full h-[40px] border mt-6 rounded-lg border-[#A9A9A9] font-semibold text-sm">
-          مشاهده پزشکان
-        </button>
+        <Link className="max-lg:hidden flex items-center justify-center w-full h-[40px] border mt-6 rounded-lg border-[#A9A9A9] font-semibold text-sm" href={`/search/expertise/${id}`}>
+          <button className="">
+            مشاهده پزشکان
+          </button>
+        </Link>
         <Link
-          href={"/"}
+          href={`/search/expertise/${id}`}
           className="lg:hidden flex mr-auto ml:3 items-center gap-0.5 "
         >
           <p className="font-semibold text-black text-sm">مشاهده</p>
