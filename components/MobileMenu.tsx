@@ -36,14 +36,14 @@ const MobileMenu = ({ setMobileMenu, mobileMenu }: props) => {
 
       <div className="flex flex-col">
         <Link
-          href={"/"}
+          href={"/search/expertise"}
           onClick={() => setMobileMenu(false)}
           className=" border-t py-3 bg-[#FAFCFE]"
         >
           <p className="px-6 text-sm">نوبت‌دهی</p>
         </Link>
         <Link
-          href={"/"}
+          href={"/evisit"}
           onClick={() => setMobileMenu(false)}
           className=" border-t py-3 bg-[#FAFCFE]"
         >
@@ -89,7 +89,7 @@ const MobileMenu = ({ setMobileMenu, mobileMenu }: props) => {
           >
             {expertise.map((item) => (
               <Link
-                href={"/"}
+                href={`/search/expertise/${item.id}`}
                 onClick={() => setMobileMenu(false)}
                 key={item.id}
                 className="px-6 text-sm "

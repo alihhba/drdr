@@ -1,6 +1,5 @@
-import { drInfo } from "@/app/page";
 import ExpertiseDrCard from "@/components/card/ExpertiseDrCard";
-import { expertise } from "@/constant/constant";
+import { drInfo, expertise } from "@/constant/constant";
 import { User } from "lucide-react";
 
 const page = ({ params }: { params: any }) => {
@@ -16,7 +15,7 @@ const page = ({ params }: { params: any }) => {
       </div>
 
       <div className="py-1 space-y-1 lg:space-y-3 mt-4">
-        {drInfo.map((dr, i) => (
+        {drInfo.map((dr) => (
           <ExpertiseDrCard
             title={dr.title}
             answerTime={dr.answerTime}
@@ -28,7 +27,8 @@ const page = ({ params }: { params: any }) => {
             time={dr.time}
             espanser={dr.espanser}
             evisit={dr.evisit}
-            key={i}
+            key={dr.id}
+            id={dr.id}
           />
         ))}
       </div>

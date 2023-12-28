@@ -11,322 +11,89 @@ import DrSlider from "@/components/slider/DrSlider";
 // Import Swiper styles
 import ExpertiseSlider from "@/components/slider/ExpertiseSlider";
 import MedicalCenterSlider from "@/components/slider/medicalCenterSlider";
-import { cityes, expertise } from "@/constant/constant";
+import { cityes, drInfo, expertise } from "@/constant/constant";
 import { ArrowLeft, UserCheck } from "lucide-react";
 import Link from "next/link";
 import "swiper/css";
 
-export const drInfo = [
-  {
-    evisit: true,
-    espanser: true,
-    title: "دکتر زهرا فلاح",
-    img: "/images/dr/c00fe66de465abc794d13288b7c334c3123aff95.webp",
-    expertise: " زنان و زایمان",
-    city: "یزد",
-    location: "بلوار طالقانی، کوچه هدایتی، بن بست اول، ساختمان 2، طبقه 3",
-    time: "30 دقیقه",
-    firstTime: "سه‌شنبه 05 دی - 9:30",
-    answerTime: "آماده پاسخگویی",
-  },
-  {
-    evisit: true,
-    espanser: false,
-    title: "دکتر زهرا فلاح",
-    img: "/images/dr/c00fe66de465abc794d13288b7c334c3123aff95.webp",
-    expertise: " زنان و زایمان",
-    city: "یزد",
-    location: "بلوار طالقانی، کوچه هدایتی، بن بست اول، ساختمان 2، طبقه 3",
-    time: "30 دقیقه",
-    firstTime: "سه‌شنبه 05 دی - 9:30",
-    answerTime: "آماده پاسخگویی",
-  },
-  {
-    evisit: true,
-    espanser: false,
-    title: "دکتر زهرا فلاح",
-    img: "/images/dr/c00fe66de465abc794d13288b7c334c3123aff95.webp",
-    expertise: " زنان و زایمان",
-    city: "یزد",
-    location: "بلوار طالقانی، کوچه هدایتی، بن بست اول، ساختمان 2، طبقه 3",
-    time: "30 دقیقه",
-    firstTime: "سه‌شنبه 05 دی - 9:30",
-    answerTime: "آماده پاسخگویی",
-  },
-  {
-    evisit: true,
-    espanser: false,
-    title: "دکتر زهرا فلاح",
-    img: "/images/dr/c00fe66de465abc794d13288b7c334c3123aff95.webp",
-    expertise: " زنان و زایمان",
-    city: "یزد",
-    location: "بلوار طالقانی، کوچه هدایتی، بن بست اول، ساختمان 2، طبقه 3",
-    time: "30 دقیقه",
-    firstTime: "سه‌شنبه 05 دی - 9:30",
-    answerTime: "آماده پاسخگویی",
-  },
-  {
-    evisit: true,
-    espanser: false,
-    title: "دکتر زهرا فلاح",
-    img: "/images/dr/c00fe66de465abc794d13288b7c334c3123aff95.webp",
-    expertise: " زنان و زایمان",
-    city: "یزد",
-    location: "بلوار طالقانی، کوچه هدایتی، بن بست اول، ساختمان 2، طبقه 3",
-    time: "30 دقیقه",
-    firstTime: "سه‌شنبه 05 دی - 9:30",
-    answerTime: "آماده پاسخگویی",
-  },
-  {
-    evisit: false,
-    espanser: false,
-    title: "دکتر زهرا فلاح",
-    img: "/images/dr/c00fe66de465abc794d13288b7c334c3123aff95.webp",
-    expertise: " زنان و زایمان",
-    city: "یزد",
-    location: "بلوار طالقانی، کوچه هدایتی، بن بست اول، ساختمان 2، طبقه 3",
-    time: "30 دقیقه",
-    firstTime: "سه‌شنبه 05 دی - 9:30",
-    answerTime: "آماده پاسخگویی",
-  },
-  {
-    evisit: false,
-    espanser: true,
-    title: "دکتر زهرا فلاح",
-    img: "/images/dr/c00fe66de465abc794d13288b7c334c3123aff95.webp",
-    expertise: " زنان و زایمان",
-    city: "یزد",
-    location: "بلوار طالقانی، کوچه هدایتی، بن بست اول، ساختمان 2، طبقه 3",
-    time: "30 دقیقه",
-    firstTime: "سه‌شنبه 05 دی - 9:30",
-    answerTime: "آماده پاسخگویی",
-  },
-  {
-    evisit: false,
-    espanser: false,
-    title: "دکتر زهرا فلاح",
-    img: "/images/dr/c00fe66de465abc794d13288b7c334c3123aff95.webp",
-    expertise: " زنان و زایمان",
-    city: "یزد",
-    location: "بلوار طالقانی، کوچه هدایتی، بن بست اول، ساختمان 2، طبقه 3",
-    time: "30 دقیقه",
-    firstTime: "سه‌شنبه 05 دی - 9:30",
-    answerTime: "آماده پاسخگویی",
-  },
-  {
-    evisit: false,
-    espanser: true,
-    title: "دکتر زهرا فلاح",
-    img: "/images/dr/c00fe66de465abc794d13288b7c334c3123aff95.webp",
-    expertise: " زنان و زایمان",
-    city: "یزد",
-    location: "بلوار طالقانی، کوچه هدایتی، بن بست اول، ساختمان 2، طبقه 3",
-    time: "30 دقیقه",
-    firstTime: "سه‌شنبه 05 دی - 9:30",
-    answerTime: "آماده پاسخگویی",
-  },
-  {
-    evisit: false,
-    espanser: false,
-    title: "دکتر زهرا فلاح",
-    img: "/images/dr/c00fe66de465abc794d13288b7c334c3123aff95.webp",
-    expertise: " زنان و زایمان",
-    city: "یزد",
-    location: "بلوار طالقانی، کوچه هدایتی، بن بست اول، ساختمان 2، طبقه 3",
-    time: "30 دقیقه",
-    firstTime: "سه‌شنبه 05 دی - 9:30",
-    answerTime: "آماده پاسخگویی",
-  },
-  {
-    evisit: false,
-    espanser: false,
-    title: "دکتر زهرا فلاح",
-    img: "/images/dr/c00fe66de465abc794d13288b7c334c3123aff95.webp",
-    expertise: " زنان و زایمان",
-    city: "یزد",
-    location: "بلوار طالقانی، کوچه هدایتی، بن بست اول، ساختمان 2، طبقه 3",
-    time: "30 دقیقه",
-    firstTime: "سه‌شنبه 05 دی - 9:30",
-    answerTime: "آماده پاسخگویی",
-  },
-  {
-    evisit: false,
-    espanser: true,
-    title: "دکتر زهرا فلاح",
-    img: "/images/dr/c00fe66de465abc794d13288b7c334c3123aff95.webp",
-    expertise: " زنان و زایمان",
-    city: "یزد",
-    location: "بلوار طالقانی، کوچه هدایتی، بن بست اول، ساختمان 2، طبقه 3",
-    time: "30 دقیقه",
-    firstTime: "سه‌شنبه 05 دی - 9:30",
-    answerTime: "آماده پاسخگویی",
-  },
-  {
-    evisit: false,
-    espanser: false,
-    title: "دکتر زهرا فلاح",
-    img: "/images/dr/c00fe66de465abc794d13288b7c334c3123aff95.webp",
-    expertise: " زنان و زایمان",
-    city: "یزد",
-    location: "بلوار طالقانی، کوچه هدایتی، بن بست اول، ساختمان 2، طبقه 3",
-    time: "30 دقیقه",
-    firstTime: "سه‌شنبه 05 دی - 9:30",
-    answerTime: "آماده پاسخگویی",
-  },
-  {
-    evisit: false,
-    espanser: false,
-    title: "دکتر زهرا فلاح",
-    img: "/images/dr/c00fe66de465abc794d13288b7c334c3123aff95.webp",
-    expertise: " زنان و زایمان",
-    city: "یزد",
-    location: "بلوار طالقانی، کوچه هدایتی، بن بست اول، ساختمان 2، طبقه 3",
-    time: "30 دقیقه",
-    firstTime: "سه‌شنبه 05 دی - 9:30",
-    answerTime: "آماده پاسخگویی",
-  },
-  {
-    evisit: false,
-    espanser: false,
-    title: "دکتر زهرا فلاح",
-    img: "/images/dr/c00fe66de465abc794d13288b7c334c3123aff95.webp",
-    expertise: " زنان و زایمان",
-    city: "یزد",
-    location: "بلوار طالقانی، کوچه هدایتی، بن بست اول، ساختمان 2، طبقه 3",
-    time: "30 دقیقه",
-    firstTime: "سه‌شنبه 05 دی - 9:30",
-    answerTime: "آماده پاسخگویی",
-  },
-  {
-    evisit: false,
-    espanser: false,
-    title: "دکتر زهرا فلاح",
-    img: "/images/dr/c00fe66de465abc794d13288b7c334c3123aff95.webp",
-    expertise: " زنان و زایمان",
-    city: "یزد",
-    location: "بلوار طالقانی، کوچه هدایتی، بن بست اول، ساختمان 2، طبقه 3",
-    time: "30 دقیقه",
-    firstTime: "سه‌شنبه 05 دی - 9:30",
-    answerTime: "آماده پاسخگویی",
-  },
-  {
-    evisit: false,
-    espanser: false,
-    title: "دکتر زهرا فلاح",
-    img: "/images/dr/c00fe66de465abc794d13288b7c334c3123aff95.webp",
-    expertise: " زنان و زایمان",
-    city: "یزد",
-    location: "بلوار طالقانی، کوچه هدایتی، بن بست اول، ساختمان 2، طبقه 3",
-    time: "30 دقیقه",
-    firstTime: "سه‌شنبه 05 دی - 9:30",
-    answerTime: "آماده پاسخگویی",
-  },
-  {
-    evisit: false,
-    espanser: false,
-    title: "دکتر زهرا فلاح",
-    img: "/images/dr/c00fe66de465abc794d13288b7c334c3123aff95.webp",
-    expertise: " زنان و زایمان",
-    city: "یزد",
-    location: "بلوار طالقانی، کوچه هدایتی، بن بست اول، ساختمان 2، طبقه 3",
-    time: "30 دقیقه",
-    firstTime: "سه‌شنبه 05 دی - 9:30",
-    answerTime: "آماده پاسخگویی",
-  },
-  {
-    evisit: false,
-    espanser: false,
-    title: "دکتر زهرا فلاح",
-    img: "/images/dr/c00fe66de465abc794d13288b7c334c3123aff95.webp",
-    expertise: " زنان و زایمان",
-    city: "یزد",
-    location: "بلوار طالقانی، کوچه هدایتی، بن بست اول، ساختمان 2، طبقه 3",
-    time: "30 دقیقه",
-    firstTime: "سه‌شنبه 05 دی - 9:30",
-    answerTime: "آماده پاسخگویی",
-  },
-  {
-    evisit: false,
-    espanser: false,
-    title: "دکتر زهرا فلاح",
-    img: "/images/dr/c00fe66de465abc794d13288b7c334c3123aff95.webp",
-    expertise: " زنان و زایمان",
-    city: "یزد",
-    location: "بلوار طالقانی، کوچه هدایتی، بن بست اول، ساختمان 2، طبقه 3",
-    time: "30 دقیقه",
-    firstTime: "سه‌شنبه 05 دی - 9:30",
-    answerTime: "آماده پاسخگویی",
-  },
-];
-
 const centeralMedicals = [
   {
+    id: "1",
     name: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
     img: "/images/medicalCenter-1.webp",
-    city: "تهران",
+    city: "مشهد",
     location:
       "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
   },
   {
+    id: "2",
     name: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
     img: "/images/medicalCenter-1.webp",
-    city: "تهران",
+    city: "اصفهان",
     location:
       "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
   },
   {
+    id: "3",
     name: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
     img: "/images/medicalCenter-1.webp",
-    city: "تهران",
+    city: "شیراز",
     location:
       "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
   },
   {
+    id: "4",
     name: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
     img: "/images/medicalCenter-1.webp",
-    city: "تهران",
+    city: "تبریز",
     location:
       "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
   },
   {
+    id: "5",
     name: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
     img: "/images/medicalCenter-1.webp",
-    city: "تهران",
+    city: "کرمان",
     location:
       "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
   },
   {
+    id: "6",
     name: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
     img: "/images/medicalCenter-1.webp",
-    city: "تهران",
+    city: "قم",
     location:
       "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
   },
   {
+    id: "7",
     name: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
     img: "/images/medicalCenter-1.webp",
-    city: "تهران",
+    city: "رشت",
     location:
       "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
   },
   {
+    id: "8",
     name: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
     img: "/images/medicalCenter-1.webp",
-    city: "تهران",
+    city: "ساری",
     location:
       "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
   },
   {
+    id: "9",
     name: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
     img: "/images/medicalCenter-1.webp",
-    city: "تهران",
+    city: "کرمانشاه",
     location:
       "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
   },
   {
+    id: "10",
     name: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
     img: "/images/medicalCenter-1.webp",
-    city: "تهران",
+    city: "ارومیه",
     location:
       "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
   },
@@ -364,6 +131,7 @@ export default function Home() {
                   espanser={dr.espanser}
                   evisit={dr.evisit}
                   key={i}
+                  id={dr.id}
                 />
               ))}
           </div>
@@ -422,6 +190,7 @@ export default function Home() {
                 city={item.city}
                 img={item.img}
                 location={item.location}
+                id={item.id}
               />
             ))}
           </div>
@@ -441,7 +210,7 @@ export default function Home() {
           <div className="lg:hidden flex flex-row   gap-4  overflow-x-scroll ">
             {drInfo
               .filter((dr) => dr.evisit === false)
-              .map((dr, i) => (
+              .map((dr) => (
                 <DrCard
                   title={dr.title}
                   answerTime={dr.answerTime}
@@ -453,7 +222,8 @@ export default function Home() {
                   time={dr.time}
                   espanser={dr.espanser}
                   evisit={dr.evisit}
-                  key={i}
+                  key={dr.id}
+                  id={dr.id}
                 />
               ))}
           </div>

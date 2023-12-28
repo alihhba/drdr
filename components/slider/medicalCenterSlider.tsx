@@ -14,6 +14,7 @@ interface props {
     img: string;
     city: string;
     location: string;
+    id: string;
   }[];
 }
 
@@ -39,6 +40,7 @@ const MedicalCenterSlider = ({ items }: props) => {
             city={it.city}
             img={it.img}
             location={it.location}
+            id={it.id}
           />
         </SwiperSlide>
       ))}

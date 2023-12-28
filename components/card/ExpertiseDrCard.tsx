@@ -1,9 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import { Eye, MapPin, Phone, PhoneCall, Star } from "lucide-react";
-import Image from "next/image";
-import React from "react";
+import { Eye, MapPin, PhoneCall } from "lucide-react";
+import Link from "next/link";
 import StarBox from "../StarBox";
-import EspanserBox from "../EspanserBox";
 
 interface props {
   evisit?: boolean | undefined;
@@ -16,6 +14,7 @@ interface props {
   time: string;
   firstTime: string;
   answerTime: string;
+  id: string;
 }
 
 const ExpertiseDrCard = ({
@@ -29,6 +28,7 @@ const ExpertiseDrCard = ({
   location,
   time,
   title,
+  id,
 }: props) => {
   return (
     <div className="flex flex-col lg:flex-row bg-white rounded-lg p-3">
@@ -52,7 +52,9 @@ const ExpertiseDrCard = ({
           <div className="flex flex-col justify-between h-full">
             <div className="flex flex-col lg:flex-row items-start lg:gap-3 ">
               <div className="flex flex-col ">
-                <p className="font-bold text-base">{title}</p>
+                <Link href={`/dr/${id}/${title.split(' ').join('-')}`} className="font-bold text-base">
+                  {title}
+                </Link>
                 <p className="text-sm">{expertise}</p>
               </div>
               <div className="flex items-center">

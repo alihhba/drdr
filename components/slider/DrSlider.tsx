@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import DrCard from "../card/DrCard";
+import { drInfo } from "@/constant/constant";
 
 interface props {
   items: {
@@ -21,13 +22,13 @@ interface props {
     time: string;
     firstTime: string;
     answerTime: string;
+    id: string;
   }[];
 }
 
 const DrSlider = ({ items }: props) => {
   return (
     <Swiper
-      // install Swiper modules
       modules={[Pagination]}
       spaceBetween={10}
       slidesPerView={4}
@@ -53,11 +54,13 @@ const DrSlider = ({ items }: props) => {
               time={dr.time}
               espanser={dr.espanser}
               evisit={dr.evisit}
-              key={i}
+              key={dr.id}
+              id={dr.id}
             />
           </SwiperSlide>
         ))}
     </Swiper>
+
   );
 };
 

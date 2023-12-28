@@ -7,9 +7,10 @@ interface props {
   city: string;
   location: string;
   img: string;
+  id: string;
 }
 
-const MedicalCenterCard = ({ city, img, location, name }: props) => {
+const MedicalCenterCard = ({ city, img, location, name  ,id}: props) => {
   return (
     <div className="flex flex-col w-[270px] h-fit min-w-[270px]">
       {/* image */}

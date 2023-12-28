@@ -4,6 +4,7 @@ import Image from "next/image";
 import React from "react";
 import StarBox from "../StarBox";
 import EspanserBox from "../EspanserBox";
+import Link from "next/link";
 
 interface props {
   evisit?: boolean | undefined;
@@ -16,6 +17,7 @@ interface props {
   time: string;
   firstTime: string;
   answerTime: string;
+  id: string;
 }
 
 const DrCard = ({
@@ -29,9 +31,10 @@ const DrCard = ({
   location,
   time,
   title,
+  id
 }: props) => {
   return (
-    <div
+    <Link href={`/dr/${id}/${title.split(' ').join('-')}`}
       className={`relative flex flex-col w-full min-w-[250px] lg:w-fit h-fit  border rounded-lg  p-4 ${
         evisit ? "bg-[#F4FDF7] border-[#D2F8DE]" : "border-[#E7E7E7]"
       }`}
@@ -111,7 +114,7 @@ const DrCard = ({
           {evisit ? "شروع مشاوره" : "دریافت نوبت"}
         </button>
       </div>
-    </div>
+    </Link>
   );
 };
 
