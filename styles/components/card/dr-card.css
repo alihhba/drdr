@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .container2 {
+    @apply relative flex flex-col w-full min-w-[250px] lg:w-fit h-fit  border rounded-lg  p-4;
+  }
+  .dr-box-espanse {
+    @apply absolute top-4 right-4;
+  }
+  .dr-box-image {
+    @apply rounded-full w-[50px] h-[50px] mx-auto min-w-[50px] min-h-[50px];
+  }
+  .evisit-div {
+    @apply absolute top-0 right-0 w-4 h-4 bg-[#22DD5E] rounded-full border-2 border-white;
+  }
+  .dr-card-title {
+    @apply mx-auto mt-3 line-clamp-1;
+  }
+  .dr-card-expertise {
+    @apply mx-auto text-xs mt-2 text-[#7E7E7E] line-clamp-1;
+  }
+  .dr-card-address-box {
+    @apply flex items-center gap-1;
+  }
+  .dr-card-address-box-text {
+    @apply line-clamp-1 text-[#7E7E7E] text-sm;
+  }
+  .dr-card-box-time1 {
+    @apply flex items-center justify-between mt-3 text-[10px] text-[#7E7E7E];
+  }
+  .dr-card-box-time2 {
+    @apply flex items-center justify-between text-[10px] text-[#7E7E7E] mt-1;
+  }
+  .dr-card-box-time3{
+    @apply flex items-center justify-between mt-3 text-[10px] text-[#7E7E7E]
+  }
+  .dr-card-btn{
+    @apply flex items-center justify-center w-full rounded-lg 
+  }
+}

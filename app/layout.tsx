@@ -1,9 +1,9 @@
-
 import type { Metadata } from "next";
 import localFont from "@next/font/local";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/Footer";
+import HydrathionProvider from "@/components/HydrathionProvider";
 
 const yekan = localFont({
   src: "../lib/fonts/Yekan Bakh Fa 04 Regular.woff",
@@ -24,19 +24,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={` overflow-x-hidden w-full h-full ${yekan.className} `}>
-        <main className="flex flex-col overflow-x-hidden">
-          <div className="bg-white fixed top-0 left-0 right-0 z-50 shadow-sm">
-            <Header />
-          </div>
+        <HydrathionProvider>
+          <main className="flex flex-col overflow-x-hidden">
+            <div className="bg-white fixed top-0 left-0 right-0 z-50 shadow-sm">
+              <Header />
+            </div>
 
-          <div className="mt-[40px] lg:mt-[110px] overflow-x-hidden">
-            {children}
-          </div>
-        </main>
-        <footer>
-          {/* footer  */}
-          <Footer />
-        </footer>
+            <div className="mt-[40px] lg:mt-[110px] overflow-x-hidden">
+              {children}
+            </div>
+          </main>
+          <footer>
+            {/* footer  */}
+            <Footer />
+          </footer>
+        </HydrathionProvider>
       </body>
     </html>
   );

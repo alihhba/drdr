@@ -13,7 +13,7 @@ const items = [
   { title: "نوبت دهی", path: "/search/expertise" },
   { title: "مشاوره تلفنی", path: "/evisit" },
   { title: "تخصص ها", path: "/evisit" },
-  { title: "مراکز درمانی", path: "/medical-centers" },
+  { title: "مراکز درمانی", path: `/medical-centers` },
   { title: "خدمات پزشکی در محل", path: "/medical-local" },
   { title: "مجله سلامت", path: "/blog" },
 ];
@@ -122,7 +122,7 @@ const Header = () => {
                 key={item.title}
                 className="flex items-center gap-1"
               >
-                <p className="text-sm ">{item.title}</p>
+                <p className="text-sm font-bold">{item.title}</p>
 
                 {item.title === "تخصص ها" && (
                   <ChevronDown

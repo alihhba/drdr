@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .container {
+    @apply relative flex w-full lg:flex-col lg:px-7  max-lg:items-center lg:gap-3   rounded-lg py-4 lg:pb-8;
+  }
+  .image-box {
+    @apply max-lg:-mr-2 lg:-mt-9 lg:ml-auto lg:-mr-3
+  }
+  .item-box-title{
+    @apply max-lg:pr-9 lg:text-2xl text-[#161C1E] line-clamp-1
+  }
+  .desc {
+    @apply hidden lg:flex line-clamp-1
+  }
+}

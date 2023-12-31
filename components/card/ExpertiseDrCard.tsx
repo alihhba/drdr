@@ -1,20 +1,23 @@
+"use client";
 /* eslint-disable @next/next/no-img-element */
-import { Eye, MapPin, PhoneCall } from "lucide-react";
-import Link from "next/link";
+import { MapPin, PhoneCall } from "lucide-react";
+import { useRouter } from "next/navigation";
 import StarBox from "../StarBox";
+import View from "../View";
 
 interface props {
   evisit?: boolean | undefined;
   espanser?: boolean | undefined;
   title: string;
   img: string;
-  expertise: string;
+  expertise?: string;
   city: string;
   location: string;
-  time: string;
-  firstTime: string;
-  answerTime: string;
+  time?: string;
+  firstTime?: string;
+  answerTime?: string;
   id: string;
+  dr?: boolean;
 }
 
 const ExpertiseDrCard = ({
@@ -29,33 +32,66 @@ const ExpertiseDrCard = ({
   time,
   title,
   id,
+  dr
 }: props) => {
+  const router = useRouter();
+
   return (
-    <div className="flex flex-col lg:flex-row bg-white rounded-lg p-3">
+    <div
+      className={`relative flex flex-col lg:flex-row bg-white  p-3 ${
+        espanser
+          ? " lg:rounded-r-lg max-lg:border-t-2 lg:border-l-2 border-[#FFB300] shadow-lg"
+          : "rounded-lg"
+      }`}
+    >
+      {espanser && (
+        <div className="absolute lg:top-2 top-0 left-2 lg:left-0 text-xs text-[#FFB300] border border-[#FFB300] p-1 rounded-b-md lg:rounded-r-md">
+          <p>اسپانسر</p>
+        </div>
+      )}
       {/* info */}
       <div className="flex flex-col lg:w-8/12">
         <div className="flex items-start gap-3 ">
           <div className="flex flex-col gap-2">
             <img
-              src="/images/dr/c00fe66de465abc794d13288b7c334c3123aff95.webp"
+              onClick={() => {
+                dr
+                  ? router.push(`/dr/${id}/${title.split(" ").join("-")}`)
+                  : router.push(
+                      `/medical-centers/${id}/${title.split(" ").join("-")}`
+                    );
+              }}
+              src={img}
               alt="drPhoto"
-              className="w-[60px] h-[60px] min-w-[60px] min-h-[60px] rounded-full border border-[#0069D1]"
+              className="w-[70px] h-[70px] min-w-[70px] min-h-[70px] rounded-full border border-[#0069D1] cursor-pointer"
             />
-            <div className="flex items-center gap-1 mx-auto mt-auto">
-              <Eye className="w-3 h-3 mb-1.5" />
-              <p className="text-sm">
-                12<span className="">K</span>
-              </p>
-            </div>
+            <View />
           </div>
 
-          <div className="flex flex-col justify-between h-full">
-            <div className="flex flex-col lg:flex-row items-start lg:gap-3 ">
+          <div
+            className={`flex flex-col justify-between  ${
+              dr ? "h-full" : "h-fit gap-2"
+            }`}
+          >
+            <div
+              className={`flex flex-col lg:flex-row  lg:gap-3 ${
+                dr ? "items-start" : "mt-3"
+              } `}
+            >
               <div className="flex flex-col ">
-                <Link href={`/dr/${id}/${title.split(' ').join('-')}`} className="font-bold text-base">
+                <p
+                  onClick={() => {
+                    dr
+                      ? router.push(`/dr/${id}/${title.split(" ").join("-")}`)
+                      : router.push(
+                          `/medical-centers/${id}/${title.split(" ").join("-")}`
+                        );
+                  }}
+                  className="font-bold text-base cursor-pointer"
+                >
                   {title}
-                </Link>
-                <p className="text-sm">{expertise}</p>
+                </p>
+                {dr && <p className="text-sm">{expertise}</p>}
               </div>
               <div className="flex items-center">
                 <StarBox />
@@ -117,7 +153,18 @@ const ExpertiseDrCard = ({
 
       <div className="lg:w-4/12 w-full gap-4 lg:mr-auto lg:mt-auto">
         <div className="flex flex-col  items-center justify-end lg:w-fit lg:mr-auto lg:mt-auto">
-          <p className="max-lg:hidden text-[#0069D1] text-sm">مشاهده پروفایل</p>
+          <p
+            onClick={() => {
+              dr
+                ? router.push(`/dr/${id}/${title.split(" ").join("-")}`)
+                : router.push(
+                    `/medical-centers/${id}/${title.split(" ").join("-")}`
+                  );
+            }}
+            className="max-lg:hidden text-[#0069D1] text-sm cursor-pointer"
+          >
+            مشاهده پروفایل
+          </p>
           <button className="bg-[#00BE43] w-full lg:w-[250px] rounded-lg py-2  text-white font-semibold mt-3 ">
             دریافت نوبت
           </button>

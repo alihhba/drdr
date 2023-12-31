@@ -192,7 +192,7 @@ export const expertise = [
 
 export const drInfo = [
   {
-    id: '1',
+    id: "1",
     evisit: false,
     espanser: true,
     title: "دکتر زهرا فلاح",
@@ -205,7 +205,7 @@ export const drInfo = [
     answerTime: "آماده پاسخگویی",
   },
   {
-    id: '2',
+    id: "2",
     evisit: false,
     espanser: false,
     title: "دکتر زهرا فلاح",
@@ -218,7 +218,7 @@ export const drInfo = [
     answerTime: "آماده پاسخگویی",
   },
   {
-    id: '3',
+    id: "3",
     evisit: false,
     espanser: false,
     title: "دکتر زهرا فلاح",
@@ -231,7 +231,7 @@ export const drInfo = [
     answerTime: "آماده پاسخگویی",
   },
   {
-    id: '4',
+    id: "4",
     evisit: false,
     espanser: true,
     title: "دکتر زهرا فلاح",
@@ -244,7 +244,7 @@ export const drInfo = [
     answerTime: "آماده پاسخگویی",
   },
   {
-    id: '5',
+    id: "5",
     evisit: false,
     espanser: false,
     title: "دکتر زهرا فلاح",
@@ -257,7 +257,7 @@ export const drInfo = [
     answerTime: "آماده پاسخگویی",
   },
   {
-    id: '6',
+    id: "6",
     evisit: false,
     espanser: false,
     title: "دکتر زهرا فلاح",
@@ -270,7 +270,7 @@ export const drInfo = [
     answerTime: "آماده پاسخگویی",
   },
   {
-    id: '7',
+    id: "7",
     evisit: false,
     espanser: true,
     title: "دکتر زهرا فلاح",
@@ -283,7 +283,7 @@ export const drInfo = [
     answerTime: "آماده پاسخگویی",
   },
   {
-    id: '8',
+    id: "8",
     evisit: false,
     espanser: false,
     title: "دکتر زهرا فلاح",
@@ -296,7 +296,7 @@ export const drInfo = [
     answerTime: "آماده پاسخگویی",
   },
   {
-    id: '9',
+    id: "9",
     evisit: false,
     espanser: false,
     title: "دکتر زهرا فلاح",
@@ -309,7 +309,7 @@ export const drInfo = [
     answerTime: "آماده پاسخگویی",
   },
   {
-    id: '10',
+    id: "10",
     evisit: false,
     espanser: true,
     title: "دکتر زهرا فلاح",
@@ -322,7 +322,7 @@ export const drInfo = [
     answerTime: "آماده پاسخگویی",
   },
   {
-    id: '11',
+    id: "11",
     evisit: false,
     espanser: false,
     title: "دکتر زهرا فلاح",
@@ -335,7 +335,7 @@ export const drInfo = [
     answerTime: "آماده پاسخگویی",
   },
   {
-    id: '12',
+    id: "12",
     evisit: false,
     espanser: false,
     title: "دکتر زهرا فلاح",
@@ -348,7 +348,7 @@ export const drInfo = [
     answerTime: "آماده پاسخگویی",
   },
   {
-    id: '13',
+    id: "13",
     evisit: true,
     espanser: true,
     title: "دکتر زهرا فلاح",
@@ -361,7 +361,7 @@ export const drInfo = [
     answerTime: "آماده پاسخگویی",
   },
   {
-    id: '14',
+    id: "14",
     evisit: true,
     espanser: false,
     title: "دکتر زهرا فلاح",
@@ -374,7 +374,7 @@ export const drInfo = [
     answerTime: "آماده پاسخگویی",
   },
   {
-    id: '15',
+    id: "15",
     evisit: true,
     espanser: false,
     title: "دکتر زهرا فلاح",
@@ -387,7 +387,7 @@ export const drInfo = [
     answerTime: "آماده پاسخگویی",
   },
   {
-    id: '16',
+    id: "16",
     evisit: true,
     espanser: true,
     title: "دکتر زهرا فلاح",
@@ -400,7 +400,7 @@ export const drInfo = [
     answerTime: "آماده پاسخگویی",
   },
   {
-    id: '17',
+    id: "17",
     evisit: true,
     espanser: false,
     title: "دکتر زهرا فلاح",
@@ -413,7 +413,7 @@ export const drInfo = [
     answerTime: "آماده پاسخگویی",
   },
   {
-    id: '18',
+    id: "18",
     evisit: true,
     espanser: false,
     title: "دکتر زهرا فلاح",
@@ -424,5 +424,88 @@ export const drInfo = [
     time: "30 دقیقه",
     firstTime: "سه‌شنبه 05 دی - 9:30",
     answerTime: "آماده پاسخگویی",
+  },
+];
+
+export const centeralMedicals = [
+  {
+    id: "1",
+    title: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
+    img: "/images/medicalCenter-1.webp",
+    city: "مشهد",
+    location:
+      "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
+  },
+  {
+    id: "2",
+    title: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
+    img: "/images/medicalCenter-1.webp",
+    city: "اصفهان",
+    location:
+      "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
+  },
+  {
+    id: "3",
+    title: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
+    img: "/images/medicalCenter-1.webp",
+    city: "شیراز",
+    location:
+      "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
+  },
+  {
+    id: "4",
+    title: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
+    img: "/images/medicalCenter-1.webp",
+    city: "تبریز",
+    location:
+      "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
+  },
+  {
+    id: "5",
+    title: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
+    img: "/images/medicalCenter-1.webp",
+    city: "کرمان",
+    location:
+      "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
+  },
+  {
+    id: "6",
+    title: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
+    img: "/images/medicalCenter-1.webp",
+    city: "قم",
+    location:
+      "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
+  },
+  {
+    id: "7",
+    title: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
+    img: "/images/medicalCenter-1.webp",
+    city: "رشت",
+    location:
+      "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
+  },
+  {
+    id: "8",
+    title: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
+    img: "/images/medicalCenter-1.webp",
+    city: "ساری",
+    location:
+      "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
+  },
+  {
+    id: "9",
+    title: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
+    img: "/images/medicalCenter-1.webp",
+    city: "کرمانشاه",
+    location:
+      "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
+  },
+  {
+    id: "10",
+    title: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
+    img: "/images/medicalCenter-1.webp",
+    city: "ارومیه",
+    location:
+      "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
   },
 ];

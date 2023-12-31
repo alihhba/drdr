@@ -3,11 +3,11 @@ import React from "react";
 
 const SearchBox = () => {
   return (
-    <div className="w-full lg:w-[550px] h-[50px] flex items-center justify-between border-2 border-[#1aab49]  rounded-full px-2 pr-4 bg-[#ffffff] group">
+    <div className="w-full lg:w-[550px] h-[50px] flex items-center justify-between border-2 border-[#1aab49]  rounded-full px-2 pr-4 bg-[#fff] focus-within:bg-[#fcf5f5] group shadow-lg">
       <div className="w-full">
         <input
           type="text"
-          placeholder="جستوجوی نام دکتر،کاینیک یا تخصص"
+          placeholder="جستوجوی نام دکتر،کلینیک یا تخصص"
           className="w-full bg-transparent outline-none border-none focus-visible:ring-0 placeholder:text-[#1aab49] "
         />
       </div>

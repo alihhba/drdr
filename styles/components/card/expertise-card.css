@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .expertise-card-container {
+    @apply flex items-center justify-center flex-col gap-3 px-1 lg:px-2 py-8  border border-[#004E9B] w-fit min-w-[134px] lg:min-w-[174px] bg-white rounded-lg shadow-sm max-w-[134px] lg:max-w-[174px];
+  }
+  .expertise-card-image {
+    @apply w-[54px]  h-[54px]
+  }
+  .expertise-card-title {
+    @apply text-[#004E9B] text-center line-clamp-1 text-sm
+  }
+}

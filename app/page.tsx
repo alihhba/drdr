@@ -7,97 +7,20 @@ import CommentCard from "@/components/card/commentCard";
 import Hero from "@/components/main/Hero";
 import SectionWrapper from "@/components/main/SectionWrapper";
 import DrSlider from "@/components/slider/DrSlider";
+import "@/styles/home/style.css";
 
 // Import Swiper styles
 import ExpertiseSlider from "@/components/slider/ExpertiseSlider";
 import MedicalCenterSlider from "@/components/slider/medicalCenterSlider";
-import { cityes, drInfo, expertise } from "@/constant/constant";
+import {
+  centeralMedicals,
+  cityes,
+  drInfo,
+  expertise,
+} from "@/constant/constant";
 import { ArrowLeft, UserCheck } from "lucide-react";
 import Link from "next/link";
 import "swiper/css";
-
-const centeralMedicals = [
-  {
-    id: "1",
-    name: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
-    img: "/images/medicalCenter-1.webp",
-    city: "مشهد",
-    location:
-      "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
-  },
-  {
-    id: "2",
-    name: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
-    img: "/images/medicalCenter-1.webp",
-    city: "اصفهان",
-    location:
-      "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
-  },
-  {
-    id: "3",
-    name: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
-    img: "/images/medicalCenter-1.webp",
-    city: "شیراز",
-    location:
-      "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
-  },
-  {
-    id: "4",
-    name: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
-    img: "/images/medicalCenter-1.webp",
-    city: "تبریز",
-    location:
-      "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
-  },
-  {
-    id: "5",
-    name: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
-    img: "/images/medicalCenter-1.webp",
-    city: "کرمان",
-    location:
-      "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
-  },
-  {
-    id: "6",
-    name: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
-    img: "/images/medicalCenter-1.webp",
-    city: "قم",
-    location:
-      "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
-  },
-  {
-    id: "7",
-    name: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
-    img: "/images/medicalCenter-1.webp",
-    city: "رشت",
-    location:
-      "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
-  },
-  {
-    id: "8",
-    name: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
-    img: "/images/medicalCenter-1.webp",
-    city: "ساری",
-    location:
-      "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
-  },
-  {
-    id: "9",
-    name: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
-    img: "/images/medicalCenter-1.webp",
-    city: "کرمانشاه",
-    location:
-      "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
-  },
-  {
-    id: "10",
-    name: "کلینیک تخصصی زخم و ترمیم بافت جهاد دانشگاهی",
-    img: "/images/medicalCenter-1.webp",
-    city: "ارومیه",
-    location:
-      "خیابان انقلاب، خیابان ابوریحان، نبش خیابان وحید نظری، پلاک 66، طبقه دوم",
-  },
-];
 
 export default function Home() {
   return (
@@ -186,7 +109,7 @@ export default function Home() {
             {centeralMedicals.map((item, i) => (
               <MedicalCenterCard
                 key={i}
-                name={item.name}
+                title={item.title}
                 city={item.city}
                 img={item.img}
                 location={item.location}
@@ -207,7 +130,7 @@ export default function Home() {
           <div className="max-lg:hidden">
             <DrSlider items={drInfo} />
           </div>
-          <div className="lg:hidden flex flex-row   gap-4  overflow-x-scroll ">
+          <div className="lg:hidden flex flex-row   gap-4  overflow-x-scroll">
             {drInfo
               .filter((dr) => dr.evisit === false)
               .map((dr) => (

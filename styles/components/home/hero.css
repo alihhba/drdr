@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .main {
+    @apply bg-gradient-to-b from-[#f4faff] to-white;
+  }
+  .main2 {
+    @apply flex flex-col lg:py-5 py-12;
+  }
+  .search-bar {
+    @apply flex items-center justify-center lg:mt-16 mt-8;
+  }
+  /* popular serach */
+  .p-container {
+    @apply flex items-center flex-col lg:flex-row max-lg:gap-4;
+  }
+  .p-title {
+    @apply text-xs text-gray-400 w-fit min-w-max;
+  }
+  .p-boxes {
+    @apply flex gap-2 items-center w-screen overflow-x-scroll px-2;
+  }
+
+  /* list items */
+  .l-container {
+    @apply flex items-center flex-col lg:flex-row mt-12 gap-4 -z-0;
+  }
+}

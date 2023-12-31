@@ -1,37 +1,32 @@
 /* eslint-disable @next/next/no-img-element */
 import { MapPin } from "lucide-react";
 import React from "react";
+import "@/styles/components/card/medical-center-card.css";
 
 interface props {
-  name: string;
+  title: string;
   city: string;
   location: string;
   img: string;
   id: string;
 }
 
-const MedicalCenterCard = ({ city, img, location, name  ,id}: props) => {
+const MedicalCenterCard = ({ city, img, location, title, id }: props) => {
   return (
-    <div className="flex flex-col w-[270px] h-fit min-w-[270px]">
+    <div className="mc-main">
       {/* image */}
-      <img
-        src={img}
-        alt="medicalCenter"
-        className="w-[140px] h-[140px] mx-auto"
-      />
+      <img src={img} alt="medicalCenter" className="mc-img" />
 
-      <div className="flex flex-col items-center justify-center border border-[#C4CED4] p-3 rounded-lg">
-        <p className="line-clamp-1 text-lg">{name}</p>
+      <div className="mc-container">
+        <p className="mc-title">{title}</p>
 
-        <div className="flex gap-1  items-center ">
+        <div className="flex gap-1  items-center">
           <MapPin className="w-7 h-7 text-[#7E7E7E]" />
-          <p className="line-clamp-1 text-[#7E7E7E] text-sm">
+          <p className="mc-address">
             <span className="text-black">{city}</span>، {location}
           </p>
         </div>
-        <button className="py-2 border border-[#0067CD] rounded-lg w-full shadow-sm text-[#0067CD] mt-4">
-          مشاهده خدمات
-        </button>
+        <button className="mc-btn">مشاهده خدمات</button>
       </div>
     </div>
   );

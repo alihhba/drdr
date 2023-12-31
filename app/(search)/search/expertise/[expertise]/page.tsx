@@ -15,7 +15,7 @@ const page = ({ params }: { params: any }) => {
         </p>
       </div>
 
-      <div className="py-1 space-y-1 lg:space-y-3 mt-6">
+      <div className="py-1 space-y-3  mt-6">
         {drInfo.map((dr) => (
           <ExpertiseDrCard
             title={dr.title}
@@ -30,6 +30,7 @@ const page = ({ params }: { params: any }) => {
             evisit={dr.evisit}
             key={dr.id}
             id={dr.id}
+            dr
           />
         ))}
       </div>

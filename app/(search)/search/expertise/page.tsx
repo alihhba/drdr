@@ -16,9 +16,9 @@ const page = () => {
         ))}
       </div>
 
-      <div className="w-full mt-2 bg-white">
+      <div className="w-full mt-2 bg-white rounded-lg">
         <div className=" border border-[#CCE6FF] rounded-lg ">
-          <div className="border-b  border-[#CCE6FF]">
+          <div className="">
             <LinkShower title="لیست پزشکان بر اساس مرکز استان‌">
               {cityes.map((city) => (
                 <div

@@ -20,9 +20,11 @@ const MobileMenu = ({ setMobileMenu, mobileMenu }: props) => {
   }, [mobileMenu]);
 
   return (
-    <div className="flex flex-col  py-16 h-screen overflow-y-scroll pb-20">
+    <div className="flex flex-col  py-16 h-screen overflow-y-scroll pb-20 ">
       <div className="flex items-center justify-between px-6">
-        <Logo blue />
+        <div onClick={() => setMobileMenu(false)}>
+          <Logo blue />
+        </div>
         <X
           onClick={() => setMobileMenu(false)}
           className="cursor-pointer w-5 h-5 "

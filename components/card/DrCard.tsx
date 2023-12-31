@@ -5,6 +5,7 @@ import React from "react";
 import StarBox from "../StarBox";
 import EspanserBox from "../EspanserBox";
 import Link from "next/link";
+import "@/styles/components/card/dr-card.css";
 
 interface props {
   evisit?: boolean | undefined;
@@ -31,11 +32,12 @@ const DrCard = ({
   location,
   time,
   title,
-  id
+  id,
 }: props) => {
   return (
-    <Link href={`/dr/${id}/${title.split(' ').join('-')}`}
-      className={`relative flex flex-col w-full min-w-[250px] lg:w-fit h-fit  border rounded-lg  p-4 ${
+    <Link
+      href={`/dr/${id}/${title.split(" ").join("-")}`}
+      className={`container2 ${
         evisit ? "bg-[#F4FDF7] border-[#D2F8DE]" : "border-[#E7E7E7]"
       }`}
     >
@@ -50,54 +52,46 @@ const DrCard = ({
 
       {/* espanser */}
       {espanser && (
-        <div className="absolute top-4 right-4 ">
+        <div className="dr-box-espanse">
           <EspanserBox />
         </div>
       )}
 
       {/* img */}
       <div className="relative w-fit mx-auto">
-        <img
-          src={img}
-          alt="drPhoto"
-          className="rounded-full w-[50px] h-[50px] mx-auto min-w-[50px] min-h-[50px] "
-        />
+        <img src={img} alt="drPhoto" className="dr-box-image" />
 
-        {evisit && (
-          <div className="absolute top-0 right-0 w-4 h-4 bg-[#22DD5E] rounded-full border-2 border-white"></div>
-        )}
+        {evisit && <div className="evisit-div"></div>}
       </div>
 
       {/* title */}
-      <p className="mx-auto mt-3 line-clamp-1">{title}</p>
-      <p className="mx-auto text-xs mt-2 text-[#7E7E7E] line-clamp-1">
-        {expertise}
-      </p>
+      <p className="dr-card-title">{title}</p>
+      <p className="dr-card-expertise">{expertise}</p>
 
       {/* address */}
-      <div className="flex items-center gap-1">
+      <div className="dr-card-address-box">
         <MapPin className="w-8 h-8 text-[#7E7E7E]" />
-        <p className="line-clamp-1 text-[#7E7E7E] text-sm">
+        <p className="dr-card-address-box-text">
           <span className="text-black">{city}</span>،{location}
         </p>
       </div>
 
       {!evisit && (
-        <div className="flex items-center justify-between mt-3 text-[10px] text-[#7E7E7E]">
+        <div className="dr-card-box-time1">
           <p>میانگین زمان انتظار</p>
           <p className="text-sm">{time}</p>
         </div>
       )}
 
       {!evisit && (
-        <div className="flex items-center justify-between text-[10px] text-[#7E7E7E] mt-1">
+        <div className="dr-card-box-time2">
           <p>اولین نوبت خالی</p>
           <p className="text-sm">{firstTime}</p>
         </div>
       )}
 
       {evisit && (
-        <div className="flex items-center justify-between mt-3 text-[10px] text-[#7E7E7E]">
+        <div className="dr-card-box-time3">
           <p>زمان پاسخگویی</p>
           <p className="text-sm">{answerTime}</p>
         </div>
@@ -105,7 +99,7 @@ const DrCard = ({
 
       <div className="mt-auto w-full">
         <button
-          className={`flex items-center justify-center w-full rounded-lg ${
+          className={`dr-card-btn ${
             evisit
               ? "border-2 border-[#1AAB49]  text-[#1AAB49] shadow-lg"
               : "bg-[#0067CD] hover:bg-[#004e9b] text-white "

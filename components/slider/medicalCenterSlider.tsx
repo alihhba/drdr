@@ -10,7 +10,7 @@ import MedicalCenterCard from "../card/MedicalCenterCard";
 
 interface props {
   items: {
-    name: string;
+    title: string;
     img: string;
     city: string;
     location: string;
@@ -36,7 +36,7 @@ const MedicalCenterSlider = ({ items }: props) => {
         <SwiperSlide className="min-w-min" key={i}>
           <MedicalCenterCard
             key={i}
-            name={it.name}
+            title={it.title}
             city={it.city}
             img={it.img}
             location={it.location}

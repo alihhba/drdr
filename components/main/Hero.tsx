@@ -3,6 +3,7 @@ import SearchBox from "../SearchBox";
 import Tag from "../Tag";
 import Link from "next/link";
 import ItemBox from "../header/ItemBox";
+import "@/styles/components/home/hero.css";
 
 const popularSearch = [
   { title: "زنان، زایمان و نازایی" },
@@ -19,8 +20,8 @@ const popularSearch = [
 
 const Hero = () => {
   return (
-    <div className="bg-gradient-to-b from-[#f4faff] to-white">
-      <div className="main-w flex flex-col lg:py-5 py-12">
+    <div className="main">
+      <div className="main2 main-w">
         {/* hero text */}
         <div className="flex flex-col lg:text-4xl text-2xl gap-2 lg:gap-4 ">
           <p className="text-center">
@@ -32,17 +33,17 @@ const Hero = () => {
         </div>
 
         {/* search bar */}
-        <div className="flex items-center justify-center lg:mt-16 mt-8">
+        <div className="search-bar">
           <SearchBox />
         </div>
 
         {/* popular search */}
         <div className="w-full mt-8">
-          <div className="flex items-center flex-col lg:flex-row max-lg:gap-4 ">
-            <p className="text-xs text-gray-400 w-fit min-w-max">
+          <div className="p-container">
+            <p className="p-title">
               جستجو‌های پرتکرار:
             </p>
-            <div className="flex gap-2 items-center w-screen overflow-x-scroll px-2">
+            <div className="p-boxes">
               {popularSearch.map((tag) => (
                 <Link href={"/"} key={tag.title}>
                   <Tag>{tag.title}</Tag>
@@ -53,7 +54,7 @@ const Hero = () => {
         </div>
 
         {/* list items */}
-        <div className="flex items-center flex-col lg:flex-row mt-12 gap-4 -z-0">
+        <div className="l-container">
           <ItemBox
             title="دریافت نوبت حضوری"
             desc="دریافت نوبت اینترنتی برای مراجعه حضوری به مطب پزشکان"

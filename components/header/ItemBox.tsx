@@ -1,6 +1,8 @@
 import { ArrowLeft, ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import "@/styles/components/home/itemBox.css";
+
 interface props {
   title: string;
   desc: string;
@@ -12,10 +14,8 @@ interface props {
 
 const ItemBox = ({ desc, icon, path, title, className, pathString }: props) => {
   return (
-    <div
-      className={`relative flex w-full lg:flex-col lg:px-7  max-lg:items-center lg:gap-3   rounded-lg py-4 lg:pb-8  ${className}`}
-    >
-      <div className="max-lg:-mr-2 lg:-mt-9 lg:ml-auto lg:-mr-3">
+    <div className={`  ${className} container`}>
+      <div className="image-box">
         <Image
           src={icon}
           height={48}
@@ -24,15 +24,20 @@ const ItemBox = ({ desc, icon, path, title, className, pathString }: props) => {
           className="lg:w-16"
         />
       </div>
-      <p className="max-lg:pr-9 lg:text-2xl text-[#161C1E] line-clamp-1">{title}</p>
+      <p className="item-box-title">
+        {title}
+      </p>
 
-      <p className="hidden lg:flex line-clamp-1">{desc}</p>
+      <p className="desc">{desc}</p>
 
       <Link href={path} className="max-lg:mr-auto lg:hidden">
         <ChevronLeft className="w-5 h-5  max-lg:ml-4" />
       </Link>
 
-      <Link href={path} className="flex items-center gap-2 mt-5 text-blue-600 pr-3 max-lg:hidden">
+      <Link
+        href={path}
+        className="flex items-center gap-2 mt-5 text-blue-600 pr-3 max-lg:hidden"
+      >
         <p>{pathString}</p>
         <ArrowLeft />
       </Link>
